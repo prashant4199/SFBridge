@@ -1,0 +1,62 @@
+<aura:component >
+    <aura:attribute name="categoryOptions" type="List" default="[]"/>
+    <aura:attribute name="assignedUsersOptions" type="List" default="[]"/>
+    <aura:attribute name="referralStagesOptions" type="List" default="[]"/>
+    <aura:attribute name="accountTypeOptions" type="List" default="[]"/>
+    <aura:attribute name="assignedTeamOptions" type="List" default="[]"/>
+    
+    <aura:attribute name="selectedCategory" type="List" default="[]" />
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <lightning:accordion>
+        <lightning:accordionSection name="Referral Search" label="Referral Search">
+            <lightning:layout class="slds-card">
+                <lightning:layoutItem padding="around-small">
+                    
+                    <lightning:checkboxGroup name="Referral Category"
+                                             label="Referral Category"
+                                             options="{! v.categoryOptions }"
+                                             value="{! v.selectedCategory}"
+                                             onchange="{! c.handleChange }"/>
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem padding="around-small">
+                    <lightning:select name="Assigned User" label="Assigned User">
+                        <option value="">choose one...</option>
+                        <option value="1">one</option>
+                    </lightning:select>
+                    
+                    <lightning:select name="Referral Stage" label="Referral Stage">
+                        <option value="">choose one...</option>
+                        <option value="1">one</option>
+                    </lightning:select>
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-small">
+                    <lightning:select name="Referral Stage" label="Referral Stage">
+                        <option value="">choose one...</option>
+                        <option value="1">one</option>
+                    </lightning:select>
+                    
+                </lightning:layoutItem>
+                
+                <lightning:layoutItem padding="around-small">
+                    <lightning:checkboxGroup name="Assigned Team"
+                                             label="Assigned Team"
+                                             options="{! v.assignedTeamOptions }"
+                                             value=""
+                                             onchange="{! c.handleChange }"/>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:accordionSection>
+        <lightning:accordionSection name="Additional Search Criteria" label="Additional Search Criteria"></lightning:accordionSection>
+        <lightning:accordionSection name="Advance Search" label="Advance Search"></lightning:accordionSection>
+    </lightning:accordion>
+    
+    <lightning:button variant="Brand" label="Search" title="Search" onclick="" />
+    <lightning:button variant="Brand" label="Clear" title="Clear" onclick="" />
+    <lightning:button variant="Brand" label="Go To Home" title="Go To Home" onclick="" />
+    <lightning:button variant="success" label="Refresh" title="Refresh" onclick=""/>
+    <lightning:button variant="success" label="Export" title="Export" onclick=""/>
+    
+</aura:component>
