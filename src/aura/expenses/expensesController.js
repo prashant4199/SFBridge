@@ -22,7 +22,6 @@
         action.setCallback(this, function(response) {
             var state = response.getState();
             if (state === "SUCCESS") {
-                console.log("Success Init",response.getReturnValue());
                 component.set("v.expenses", response.getReturnValue());
             }
             else {
